@@ -1,0 +1,215 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* Ensure the workflow area takes full width and is scrollable on small screens */
+.workflow-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+
+.workflow-item {
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%; /* Default width for mobile */
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.workflow-item:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Query for Tablets and Above (Min-width: 768px) */
+@media screen and (min-width: 768px) {
+  .workflow-area {
+    flex-direction: row;
+  }
+
+  .workflow-item {
+    width: 48%; /* Two items per row on tablets */
+  }
+}
+
+/* Media Query for Large Screens (Min-width: 1024px) */
+@media screen and (min-width: 1024px) {
+  .workflow-area {
+    gap: 30px;
+  }
+
+  .workflow-item {
+    width: 23%; /* Four items per row on desktops */
+  }
+}
+
+/* Responsive Navigation Bar for Workflow */
+.workflow-nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #333;
+  padding: 15px;
+  color: #fff;
+}
+
+.workflow-nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.workflow-nav a:hover {
+  background-color: #555;
+}
+
+/* Responsive chart containers */
+.chart-container {
+  width: 100%;
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .chart-container {
+    width: 50%; /* Chart takes up 50% on tablets and above */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .chart-container {
+    width: 30%; /* Chart takes up 30% on large screens */
+  }
+}
+
+/* Responsive Drag-and-Drop containers (for react-dnd or react-flow-renderer) */
+.dnd-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px;
+}
+
+.dnd-item {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .dnd-item {
+    width: 48%; /* Two items per row for drag-and-drop on tablets */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .dnd-item {
+    width: 23%; /* Four items per row on larger screens */
+  }
+}
+
+
+
+
+/* Base Button Style */
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Slightly enlarges the button on hover */
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Responsive Button Sizes */
+@media screen and (max-width: 768px) {
+  button {
+    width: 100%; /* Button takes full width on mobile */
+    padding: 12px; /* Increased padding for easier tapping */
+    font-size: 14px; /* Slightly smaller font on mobile */
+  }
+}
+
+@media screen and (min-width: 768px) {
+  button {
+    width: auto; /* Default width for tablets and above */
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  button {
+    padding: 10px 25px; /* Increased padding for larger screens */
+    font-size: 18px; /* Larger font for bigger screens */
+  }
+}
